@@ -21,13 +21,13 @@
                     <td><?= $user["email"]; ?></td>
                     <td><?= $user["password"]; ?></td>
                     <td>
-                        <form method="POST" action="index.php?controller=user&action=.................(showUpdateForm)">
+                        <form method="POST" action="/user/update">
                             <input type="hidden" value="<?= $user["id"]; ?>" name="updateID">
                             <input type="submit" value="📝">
                         </form>
                     </td>
                     <td>
-                        <form method="POST" action="index.php?controller=user&action=.........delete">
+                        <form method="POST" action="/user/delete">
                             <input type="hidden" value="<?= $user["id"]; ?>" name="deleteID">
                             <input type="submit" value="🗑️">
                         </form>
@@ -42,4 +42,4 @@
         base sur l'index) : à vous de le mettre à jour en prenant en compte
         le controlleur et l'action adéquate.
     -->
-    <p><a href="index.php?controller=book&action=showAddForm" title="Ajouter un utilisateur">Ajouter un utilisateur</a></p>
+    <p><a href="/user/add" title="Ajouter un utilisateur">Ajouter un utilisateur</a></p>
