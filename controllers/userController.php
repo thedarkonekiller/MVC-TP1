@@ -49,15 +49,27 @@ function showAddFormUser()
     require_once('./views/users/add.php');
 }
 
+function signUp()
+{
+    require_once('./views/users/signup.php');
+}
+
+function signIn()
+{
+    require_once('./views/users/signin.php');
+}
+
 function sendAddUser()
 {
-
+    var_dump("test");
+    var_dump($_POST);
 
     // Initialisation d'un tableau d'erreurs (vide)
     $errors = [];
 
     // Si le formulaire a été transmis
     if ($_POST) {
+        
 
         // Pour chaque champ du formulaire
         foreach ($_POST as $field => $value) {
@@ -118,7 +130,7 @@ function sendDeleteUser()
 
         // Stocke l'ID du livre à supprimer dans une variable
         $bookID = $_POST["deleteID"];
-        deleteBook($bookID);
+        deleteUser($bookID);
     } else {
         header('Location: /error');
     }
