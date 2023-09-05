@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <title><?= $pageTitle; ?></title>
 </head>
-<body class="bg-success">
+<body>
     <header>
         <nav>
             <a href="/" title="Retourner à la page d'accueil"><img src="/public/images/logo.svg" alt="Logo du site de la bibliotheque virtuelle"></a>
