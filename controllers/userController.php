@@ -49,6 +49,16 @@ function showAddFormUser()
     require_once('./views/users/add.php');
 }
 
+function signUp()
+{
+    require_once('./views/users/signup.php');
+}
+
+function signIn()
+{
+    require_once('./views/users/signin.php');
+}
+
 function sendAddUser()
 {
 

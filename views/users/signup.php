@@ -1,4 +1,4 @@
-<h2>Entrez vos informations</h2>
+<h2>S'Enregistrer</h2>
 
 
 <form action="index.php?controller=user&action=sendAddUser" method="POST">

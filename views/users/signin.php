@@ -1,6 +1,6 @@
 
-<h2>se connecter</h2>
-<form action="" method="post">
+<h2>Se Connecter</h2>
+<form action="index.php?controller=user&action=" method="post">
 <label for="email">Votre email</label>
         <input type="email" id="email" placeholder="ex: marie@gmail.com"><br>
         <label for="motdepasse">Votre mot de passe</label>
