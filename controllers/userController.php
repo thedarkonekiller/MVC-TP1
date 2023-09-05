@@ -104,7 +104,7 @@ function sendAddUser()
                 $password = htmlentities($_POST["password"]);
                 $role = htmlentities($_POST["role"]);
                 // Pour rappel : htmlentites permet aux phrases qui contiennent des apostrophes de tout de même être enregistrées.
-                add($lastname, $firstname, $email, $password, $role);
+                addUser($lastname, $firstname, $email, $password, $role);
             }
         }
     }
