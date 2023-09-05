@@ -4,7 +4,7 @@
 
 <h1>Utilisateurs de notre site&nbsp;:</h1>
 
-<table border=1>
+<table border=1 class="bg-white">
         <thead>
             <th>Nom</th>
             <th>Prenom</th>
@@ -16,10 +16,10 @@
         <tbody>
             <?php foreach($users as $user){ ?>
                 <tr>
-                    <td><?= $user["lastName"]; ?></td>
-                    <td><?= $user["firstName"]; ?></td>
+                    <td><?= $user["lastname"]; ?></td>
+                    <td><?= $user["firstname"]; ?></td>
                     <td><?= $user["email"]; ?></td>
-                    <td><?= $user["password"]; ?></td>
+                    <td><?= $user["pwd"]; ?></td>
                     <td>
                         <form method="POST" action="/user/update">
                             <input type="hidden" value="<?= $user["id"]; ?>" name="updateID">

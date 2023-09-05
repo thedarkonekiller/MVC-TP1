@@ -10,11 +10,5 @@
         <input type="email" name="email" id="email" placeholder="ex: marie@gmail.com"><br>
         <label for="motdepasse">Votre mot de passe</label>
         <input type="password" name="password" id="motdepasse"><br>
-        <label for="role">Role</label>
-        <select name="role" id="">
-        <option value="visiter">Visiteur</option>
-        <option value="classic">classique</option>
-        <option value="admin">Admin</option>
-        </select><br>
         <button type="submit">Submit</button>
     </form>
