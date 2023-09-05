@@ -1,0 +1,72 @@
+$primary: white;
+$secondary: tomato;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    background: url(/public/images/books-1163695_1920.jpg);
+}
+
+.container {
+    background-color: $primary;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    ul {
+        display: flex;
+        li {
+            display: flex;
+            a {
+                text-decoration: none;
+                color: $primary;
+                padding: .625rem 1.875rem;
+                font-size: 1.25rem;
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            img {
+                margin: 1.25rem .625rem;
+            }
+        }
+        ul {
+            display: flex;
+            li {
+                display: flex;
+                a {
+                    text-decoration: none;
+                    color: $primary;
+                    padding: .625rem 1.875rem;
+                    font-size: 2.25rem;
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    p {
+        font-size: 3rem;
+    }
+}

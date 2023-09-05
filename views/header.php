@@ -11,8 +11,23 @@
 <body class="bg-success">
     <header>
         <nav>
-            <img src="" alt="">
-            ul
+            <a href="/" title="Retourner à la page d'accueil"><img src="/public/images/logo.svg" alt="Logo du site de la bibliotheque virtuelle"></a>
+            <ul>
+                <li>
+                    <a href="" title="">Utilisateurs</a>
+                </li>
+                <li>
+                    <a href="" title="">Livres</a>
+                </li>
+            </ul>
         </nav>
+        <ul>
+            <li>
+                <a href="" title="">S'enregistrer</a>
+            </li>
+            <li>
+                <a href="" title="">Se connecter</a>
+            </li>
+        </ul>
     </header>
 <main>

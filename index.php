@@ -16,7 +16,7 @@
     
     }
     else { ?>
-        <p>Cliquez <a href="/books">ici</a> pour accéder à notre bibliothèque</p>        
+        <p class="container">Cliquez <a href="/books">ici</a> pour accéder à notre bibliothèque</p>        
     <?php }
 ?>
 
