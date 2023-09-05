@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^error/?$ index.php?controller=book&action=error [L]
+RewriteRule ^books/?$ index.php?controller=book&action=showAll [L]
+RewriteRule ^book/update/?$ index.php?controller=book&action=showUpdateForm [L]
+RewriteRule ^book/add/?$ index.php?controller=book&action=showAddForm [L]
