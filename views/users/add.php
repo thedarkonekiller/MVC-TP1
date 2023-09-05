@@ -1,7 +1,7 @@
 <h2>Entrez vos informations</h2>
 
 
-<form action="index.php?controller=user&action=sendAddUser" method="POST">
+<form action="/index.php?controller=user&action=sendAddUser" method="POST">
         <label for="nom">Votre NOM</label>
         <input type="text" name="lastName" id="nom" placeholder="ex: LUMIER"><br>
         <label for="prenom">Votre Prénom</label>
@@ -12,9 +12,9 @@
         <input type="password" name="password" id="motdepasse"><br>
         <label for="role">Role</label>
         <select name="role" id="">
-        <option value="visiter">Visiteur</option>
-        <option value="classic">classique</option>
-        <option value="admin">Admin</option>
+        <option value="VISIT">Visiteur</option>
+        <option value="USER">Utilisateur</option>
+        <option value="ADMIN">Admin</option>
         </select><br>
         <button type="submit">Submit</button>
     </form>

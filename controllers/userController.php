@@ -61,8 +61,6 @@ function signIn()
 
 function sendAddUser()
 {
-    var_dump("test");
-    var_dump($_POST);
 
     // Initialisation d'un tableau d'erreurs (vide)
     $errors = [];
@@ -108,7 +106,7 @@ function sendAddUser()
             // Si le tableau d'erreurs est vide, alors cela signifie que le formulaire a été correctement rempli
             else {
                 // Uniquement dans ce cas, il est possible de procéder à l'ajout en base de données.
-
+var_dump("test");
                 // Stockage des données issues du formulaire sous forme de variables individuelles 
                 $lastname = htmlentities($_POST["lastName"]);
                 $firstname = htmlentities($_POST["firstName"]);
