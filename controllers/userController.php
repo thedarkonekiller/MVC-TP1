@@ -6,8 +6,8 @@ require_once('./models/userModel.php');
 
 function showAllUsers()
 {
-    $results = getAllUsers();
-    require_once('/users');
+    $users = getAllUsers();
+    require_once('./views/users/all.php');
 }
 
 
@@ -38,7 +38,7 @@ function sendUpdateUser()
         $email = htmlentities($_POST["email"]);
         $password = htmlentities($_POST["password"]);
         $role = htmlentities($_POST["role"]);
-        $id = $_POST["userID"];
+        $id = $_POST["updateID"];
 
         updateUser($lastname, $firstname, $email, $password, $role, $id);
     }
