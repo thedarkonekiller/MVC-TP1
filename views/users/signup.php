@@ -1,7 +1,7 @@
 <h2>Entrez vos informations</h2>
 
 
-<form action="#" method="POST">
+<form action="index.php?controller=user&action=sendAddUser" method="POST">
         <label for="nom">Votre NOM</label>
         <input type="text" id="nom" placeholder="ex: LUMIER"><br>
         <label for="prenom">Votre Prénom</label>

@@ -1,6 +1,6 @@
 <?php 
     $pageTitle = "Appli à améliorer selon le design pattern MVC";
-    require_once($_SERVER['DOCUMENT_ROOT'].'/views/header.php');
+    require_once('./views/header.php');
 
     if($_GET && $_GET['controller']){
         $controller =$_GET['controller'].'Controller';
