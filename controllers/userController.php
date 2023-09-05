@@ -61,13 +61,15 @@ function signIn()
 
 function sendAddUser()
 {
-
+    var_dump("test");
+    var_dump($_POST);
 
     // Initialisation d'un tableau d'erreurs (vide)
     $errors = [];
 
     // Si le formulaire a été transmis
     if ($_POST) {
+        
 
         // Pour chaque champ du formulaire
         foreach ($_POST as $field => $value) {
@@ -114,7 +116,7 @@ function sendAddUser()
                 $password = htmlentities($_POST["password"]);
                 $role = htmlentities($_POST["role"]);
                 // Pour rappel : htmlentites permet aux phrases qui contiennent des apostrophes de tout de même être enregistrées.
-                add($lastname, $firstname, $email, $password, $role);
+                addUser($lastname, $firstname, $email, $password, $role);
             }
         }
     }
@@ -128,7 +130,7 @@ function sendDeleteUser()
 
         // Stocke l'ID du livre à supprimer dans une variable
         $bookID = $_POST["deleteID"];
-        deleteBook($bookID);
+        deleteUser($bookID);
     } else {
         header('Location: /error');
     }
