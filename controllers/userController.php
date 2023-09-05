@@ -17,7 +17,7 @@ function showUpdateFormUser()
     if ($_POST && isset($_POST["updateID"])) {
         // Stocke l'ID du livre à update dans une variable
         $user = FindByIdUser($_POST['updateID']);
-        require_once('/user/update.php');
+        require_once('./views/users/update.php');
         // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
         // ou bien qu'il ne contient pas un champ "updateID" renseigné.
     } else {
@@ -46,7 +46,7 @@ function sendUpdateUser()
 
 function showAddFormUser()
 {
-    require_once('./user/add');
+    require_once('./views/users/add.php');
 }
 
 function sendAddUser()

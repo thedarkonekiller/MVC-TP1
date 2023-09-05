@@ -1,6 +1,6 @@
 <?php
 // Récupération de la connexion à la base de données
-require_once($_SERVER['DOCUMENT_ROOT'] . '/models/dbModel.php');
+require_once('./models/dbModel.php');
 
 function getAllUsers()
 {
@@ -71,7 +71,7 @@ function FindByIdUser($userID)
         }
         // Si la requête a rencontré une erreur lors de son execution
         else {
-            header('Location: index.php?controller=book&action=error');
+            header('Location: /error');
         }
     }
     return $user;
