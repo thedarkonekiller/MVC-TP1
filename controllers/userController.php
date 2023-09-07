@@ -28,10 +28,8 @@ function showUpdateFormUser()
 function sendUpdateUser()
 {
     // Traitement du formulaire de modification //
-    var_dump($_POST);
     // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "submitted".
-    if ($_POST && isset($_POST["submitted"])) {
-        var_dump("text");
+    if ($_POST && isset($_POST["updateID"])) {
 
         // On devrait logiquement contrôler l'intégrité des données mais... (ce sera à vous de le faire).
         $lastname = htmlentities($_POST["lastname"]);
