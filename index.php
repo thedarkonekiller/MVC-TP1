@@ -1,4 +1,7 @@
 <?php 
+if(!isset($_SESSION)){
+    session_start();
+}
     $pageTitle = "Appli à améliorer selon le design pattern MVC";
     require_once('./views/header.php');
 

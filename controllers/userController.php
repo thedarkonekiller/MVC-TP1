@@ -13,15 +13,21 @@ function showAllUsers()
 
 function showUpdateFormUser()
 {
-    // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
-    if ($_POST && isset($_POST["updateID"])) {
-        // Stocke l'ID du livre à update dans une variable
-        $user = FindByIdUser($_POST['updateID']);
-        require_once('./views/users/update.php');
-        // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
-        // ou bien qu'il ne contient pas un champ "updateID" renseigné.
+    if ($_SESSION && $_SESSION["user"]["role"] === "ADMIN") {
+        // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
+        if ($_POST && isset($_POST["updateID"])) {
+            // Stocke l'ID du livre à update dans une variable
+            $user = FindByIdUser($_POST['updateID']);
+            require_once('./views/users/update.php');
+            // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
+            // ou bien qu'il ne contient pas un champ "updateID" renseigné.
+        } else {
+            header('Location: /error');
+        }
     } else {
-        header('Location: /error');
+        // On affiche une page erreur "pas admin"
+            header('Location: /notadmin');
+
     }
 }
 
@@ -47,7 +53,13 @@ function sendUpdateUser()
 
 function showAddFormUser()
 {
-    require_once('./views/users/add.php');
+    if ($_SESSION && $_SESSION["user"]["role"] === "ADMIN") {
+        require_once('./views/users/add.php');
+    } else {
+        // On affiche une page erreur "pas admin"
+            header('Location: /notadmin');
+        
+    }
 }
 
 function signUp()
@@ -58,6 +70,12 @@ function signUp()
 function signIn()
 {
     require_once('./views/users/signin.php');
+}
+
+function signOut()
+{
+    session_unset();
+    header('Location: /');
 }
 
 function sendAddUser()
@@ -123,18 +141,61 @@ var_dump("test");
 
 function sendDeleteUser()
 {
+    if ($_SESSION && $_SESSION["user"]["role"] === "ADMIN") {
 
-    // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
-    if ($_POST && $_POST["deleteID"]) {
+        // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
+        if ($_POST && $_POST["deleteID"]) {
+    
+            // Stocke l'ID du livre à supprimer dans une variable
+            $bookID = $_POST["deleteID"];
+            deleteUser($bookID);
+        } else {
+            header('Location: /error');
+        }
+    
+        // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
+        // ou bien qu'il ne contient pas un champ "deleteID" renseigné.
 
-        // Stocke l'ID du livre à supprimer dans une variable
-        $bookID = $_POST["deleteID"];
-        deleteUser($bookID);
     } else {
-        header('Location: /error');
+        // On affiche une page erreur "pas admin"
+            header('Location: /notadmin');
+        
     }
-
-    // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
-    // ou bien qu'il ne contient pas un champ "deleteID" renseigné.
 }
 
+
+function sendLogin() {
+
+    // require_once($_SERVER['DOCUMENT_ROOT'] . '/./webfiles/scripts/functions.php');
+    
+    // Validator($_POST);
+    var_dump("test");
+    if ($_POST && isset($_POST['login'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $user = login($email);
+        var_dump($user);
+                if (is_array($user)) {
+                    if ($password === $user['pwd']) {
+                        if ($user) {
+                            $_SESSION["user"] =
+                                [
+                                    "id" => $user["id"],
+                                    "email" => $user["email"],
+                                    "role" => $user["role"]
+                                ];
+                                header('Location: /');
+                            exit;
+                        }
+                        } else {
+                            echo "Les informations envoyées ne permettent pas de vous identifier";
+                            // header('Location: /signin');
+                            exit;
+                    }
+                } else {
+                    echo "L'utilisateur n'existe pas";
+                    // header('Location: /signin');
+                    exit;
+                }
+            }
+}

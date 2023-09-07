@@ -130,3 +130,18 @@ function deleteUser($userID)
         }
     } // Fin du contrôle de la connexion à PDO
 }
+
+function login($email) {
+    
+    $pdoConn = dbconnect();
+
+    // Contrôle de l'état de la connexion à la base de données
+    if ($pdoConn) {
+        $requser = "SELECT * FROM users WHERE email = '$email'";
+        $execuser = $pdoConn->query($requser);
+        if ($execuser != FALSE) {
+            $user = $execuser->fetch(PDO::FETCH_ASSOC);
+            return $user;
+}
+}
+}

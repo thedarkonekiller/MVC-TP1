@@ -1,5 +1,7 @@
-<?php 
+<?php  
+if(!isset($_SESSION)){
     session_start();
+}
     $pageTitle = "Ajouter un livre";
 ?>
 <h2>Entrez vos informations</h2>

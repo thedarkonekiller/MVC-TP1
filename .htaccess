@@ -1,6 +1,7 @@
 RewriteEngine On
 RewriteBase /
-RewriteRule ^error/?$ index.php?controller=book&action=error [L]
+RewriteRule ^error/?$ index.php?controller=main&action=error [L]
+RewriteRule ^notadmin/?$ index.php?controller=main&action=notadmin [L]
 RewriteRule ^books/?$ index.php?controller=book&action=showAll [L]
 RewriteRule ^book/update/?$ index.php?controller=book&action=showUpdateForm [L]
 RewriteRule ^book/add/?$ index.php?controller=book&action=showAddForm [L]
@@ -10,3 +11,4 @@ RewriteRule ^user/update/?$ index.php?controller=user&action=showUpdateFormUser 
 RewriteRule ^user/delete/?$ index.php?controller=user&action=sendDeleteUser [L]
 RewriteRule ^signup/?$ index.php?controller=user&action=signUp [L]
 RewriteRule ^signin/?$ index.php?controller=user&action=signIn [L]
+RewriteRule ^signout/?$ index.php?controller=user&action=signOut [L]

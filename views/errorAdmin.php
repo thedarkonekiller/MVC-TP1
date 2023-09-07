@@ -6,4 +6,4 @@ if(!isset($_SESSION)){
     require_once($_SERVER['DOCUMENT_ROOT'].'/views/header.php');
 ?>
 
-<h1>Oups&nbsp;! On dirait bien qu'une erreur s'est produite.</h1>
+<h1>Oups&nbsp;! On dirait bien que tu n'es pas admin.</h1>

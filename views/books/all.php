@@ -1,5 +1,7 @@
-<?php 
+<?php  
+if(!isset($_SESSION)){
     session_start();
+}
     $pageTitle = "Notre bibliothèque";
     require_once($_SERVER['DOCUMENT_ROOT'].'/views/header.php');
 ?>

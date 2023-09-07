@@ -13,17 +13,23 @@ function showAll()
 
 function showUpdateForm()
 {
-    // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
-    if ($_POST && isset($_POST["updateID"])) {
-        // Stocke l'ID du livre à update dans une variable
-        $book = FindById($_POST['updateID']);
-        require_once('./views/books/update.php');
-        // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
-        // ou bien qu'il ne contient pas un champ "updateID" renseigné.
+    if ($_SESSION && $_SESSION["user"]["role"] === "ADMIN") {
+        // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
+        if ($_POST && isset($_POST["updateID"])) {
+            // Stocke l'ID du livre à update dans une variable
+            $book = FindById($_POST['updateID']);
+            require_once('./views/books/update.php');
+            // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
+            // ou bien qu'il ne contient pas un champ "updateID" renseigné.
+        } else {
+            header('Location: ' . $_SERVER['DOCUMENT_ROOT'] . '/views/error.php');
+        } 
     } else {
-        header('Location: ' . $_SERVER['DOCUMENT_ROOT'] . '/views/error.php');
+        // On affiche une page erreur "pas admin"
+        header('Location: /notadmin');
+        
     }
-}
+    }
 
 function sendUpdate()
 {
@@ -44,7 +50,13 @@ function sendUpdate()
 
 function showAddForm()
 {
-    require_once('./views/books/add.php');
+    if ($_SESSION && $_SESSION["user"]["role"] === "ADMIN") {
+        require_once('./views/books/add.php');
+    } else {
+        // On affiche une page erreur "pas admin"
+            header('Location: /notadmin');
+
+    }
 }
 
 function sendAdd()
@@ -108,22 +120,25 @@ function sendAdd()
 
 function sendDelete()
 {
+    if ($_SESSION && $_SESSION["user"]["role"] === "ADMIN") {
 
-    // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
-    if ($_POST && $_POST["deleteID"]) {
-
-        // Stocke l'ID du livre à supprimer dans une variable
-        $bookID = $_POST["deleteID"];
-        deleteBook($bookID);
+        // Si l'accès à cette page résulte de la transmission d'un formulaire via POST et qu'il contient un champ non vide dont le name vaut "deleteID".
+        if ($_POST && $_POST["deleteID"]) {
+    
+            // Stocke l'ID du livre à supprimer dans une variable
+            $bookID = $_POST["deleteID"];
+            deleteBook($bookID);
+        } else {
+            header('Location: index.php?controller=book&action=error');
+        }
+    
+        // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
+        // ou bien qu'il ne contient pas un champ "deleteID" renseigné.
+        
     } else {
-        header('Location: index.php?controller=book&action=error');
+        // On affiche une page erreur "pas admin"
+            header('Location: /notadmin');
+
     }
-
-    // Si l'accès à la page ne s'est pas faite suite à l'envoi d'un formulaire transmis par méthode POST
-    // ou bien qu'il ne contient pas un champ "deleteID" renseigné.
 }
 
-function error()
-{
-    require_once('./views/error.php');
-}

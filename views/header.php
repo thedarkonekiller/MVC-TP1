@@ -28,6 +28,9 @@
             <li>
                 <a href="/signin" title="">Se connecter</a>
             </li>
+            <li>
+                <a href="/signout" title="">Se déconnecter</a>
+            </li>
         </ul>
     </header>
 <main>

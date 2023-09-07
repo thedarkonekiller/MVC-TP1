@@ -1,5 +1,7 @@
-<?php 
+<?php  
+if(!isset($_SESSION)){
     session_start();
+}
     $pageTitle = "Ajout d'un livre";
     require_once($_SERVER['DOCUMENT_ROOT'].'/views/header.php'); 
 ?>

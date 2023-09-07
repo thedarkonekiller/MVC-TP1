@@ -1,5 +1,7 @@
-<?php 
+<?php  
+if(!isset($_SESSION)){
     session_start();
+}
     $pageTitle = "Enregistrement";
 ?>
 <h2>S'Enregistrer</h2>

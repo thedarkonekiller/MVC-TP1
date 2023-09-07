@@ -1,5 +1,7 @@
-<?php 
+<?php  
+if(!isset($_SESSION)){
     session_start();
+}
     $pageTitle = "Modifier un utilisateur";
 ?>
 <!-- Si la requête a retourné un résultat (on affiche le formulaire d'édition avec les données pré-renseignées)-->
