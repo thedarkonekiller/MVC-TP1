@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     $pageTitle = "Ajout d'un livre";
     require_once($_SERVER['DOCUMENT_ROOT'].'/views/header.php'); 
 ?>

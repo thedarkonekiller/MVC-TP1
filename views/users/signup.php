@@ -1,5 +1,8 @@
+<?php 
+    session_start();
+    $pageTitle = "Enregistrement";
+?>
 <h2>S'Enregistrer</h2>
-
 
 <form action="index.php?controller=user&action=sendAddUser" method="POST">
         <label for="nom">Votre NOM</label>

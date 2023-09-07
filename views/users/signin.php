@@ -1,4 +1,7 @@
-
+<?php 
+    session_start();
+    $pageTitle = "Login";
+?>
 <h2>Se Connecter</h2>
 <form action="index.php?controller=user&action=" method="post">
 <label for="email">Votre email</label>

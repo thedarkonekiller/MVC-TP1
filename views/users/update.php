@@ -1,5 +1,9 @@
+<?php 
+    session_start();
+    $pageTitle = "Modifier un utilisateur";
+?>
 <!-- Si la requête a retourné un résultat (on affiche le formulaire d'édition avec les données pré-renseignées)-->
-<h1 >Modification du utilisateur<?= $user["lastname"] ?>&nbsp;:</h1>
+<h1 >Modification de l'utilisateur<?= $user["lastname"] ?>&nbsp;:</h1>
 
 <form action="/index.php?controller=user&action=sendUpdateUser" method="POST" >
     

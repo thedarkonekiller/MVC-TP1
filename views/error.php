@@ -1,4 +1,5 @@
-<?php 
+<?php
+    session_start();
     $pageTitle = "Une erreur s'est produite";
     require_once($_SERVER['DOCUMENT_ROOT'].'/views/header.php');
 ?>

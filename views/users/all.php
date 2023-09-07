@@ -1,5 +1,6 @@
 <?php 
-    $pageTitle = "Notre Utilisateurs";
+    session_start();
+    $pageTitle = "Nos Utilisateurs";
 ?>
 
 <h1>Utilisateurs de notre site&nbsp;:</h1>

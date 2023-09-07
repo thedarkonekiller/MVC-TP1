@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    $pageTitle = "Modifier un livre";
+?>
 <!-- Si la requête a retourné un résultat (on affiche le formulaire d'édition avec les données pré-renseignées)-->
 <h1 class="text-center mb-5">Modification du livre intitulé <?= $book["name"] ?>&nbsp;:</h1>
 
